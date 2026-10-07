@@ -27,7 +27,7 @@ public class menu {
                     
                     break;
                 case 2:
-                    m.cancelarTurno(c, sc);
+                    m.CancelarTurno(c, sc);
                     
                     break;
                 case 3:

@@ -1,12 +1,10 @@
+
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
+
+
 
 public class metodos {
-
-    
-
-
 
     public Queue<obj> registrar(Queue<obj> c, Scanner sc) {
         metodos m = new metodos();
@@ -40,7 +38,7 @@ public class metodos {
 
     private int MenuTramite(Scanner sc) {
         metodos m = new metodos();
-        
+
         System.out.println("1- Pagar");
         System.out.println("2- Pedir informacion");
 
@@ -49,7 +47,7 @@ public class metodos {
     }
 
     public int ValidarEentero(Scanner sc) {
-        
+
         while (!sc.hasNextInt()) {
             System.out.println(
                     "Por favor ingrese un numero ENTERO");
@@ -58,26 +56,28 @@ public class metodos {
         return sc.nextInt();
     }
 
-    public String cancelarTurno(Queue<obj> c, Scanner sc) {
-
+    public String CancelarTurno(Queue<obj> c, Scanner sc) {
+        
         System.out.println("ingrese el id del cliente: ");
         String id = sc.next();
         for (obj o : c) {
             if (o.getId() == id) {
                 c.remove();
+                System.out.println("entro");
 
             }
 
         }
 
-        return "Turno eliminado";
-
+        return "eliminado";
     }
+
+    
 
     public String CambioCaja(Queue<obj> c, Scanner sc) {
         metodos m = new metodos();
         System.out.println("ingrese el id del cliente: ");
-        String id = sc.next();
+        String id = sc.nextLine();
         for (obj o : c) {
             if (o.getId() == id) {
                 System.out.println("a cual caja desea cambiar?");
@@ -108,24 +108,20 @@ public class metodos {
         return c;
     }
 
-   public String MostrarClientes(Queue<obj> c ){
+    public String MostrarClientes(Queue<obj> c) {
 
-        if(c.isEmpty()){
+        if (c.isEmpty()) {
             System.out.println("\nno hay clientes\n");
         }
 
         for (obj o : c) {
-           
-            
-            
-            
+
             System.out.println("Id: " + o.getId());
             System.out.println("Servicio: " + o.getServicio());
             System.out.println("Estado: " + o.getState());
             System.out.println("Caja: " + o.getCaja());
             System.out.println("----------------------------------");
-         
-            
+
         }
 
         return "Mostrado con exito";
