@@ -61,15 +61,15 @@ public class metodos {
         System.out.println("ingrese el id del cliente: ");
         String id = sc.next();
         for (obj o : c) {
-            if (o.getId() == id) {
+            if (o.getId().equals(id)) {
                 c.remove();
-                System.out.println("entro");
+                System.out.println("eliminado");
 
             }
 
         }
 
-        return "eliminado";
+        return "";
     }
 
     
@@ -77,9 +77,9 @@ public class metodos {
     public String CambioCaja(Queue<obj> c, Scanner sc) {
         metodos m = new metodos();
         System.out.println("ingrese el id del cliente: ");
-        String id = sc.nextLine();
+        String id = sc.next();
         for (obj o : c) {
-            if (o.getId() == id) {
+            if (o.getId().equals(id)) {
                 System.out.println("a cual caja desea cambiar?");
                 int op = m.ValidarEentero(sc);
                 o.setCaja(op);
